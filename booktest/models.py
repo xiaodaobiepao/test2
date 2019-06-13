@@ -13,7 +13,7 @@ class BookInfo(models.Model):
         db_table='bookinfo'
 
     @classmethod
-    def create(cls,btitle,bpub,bpub_date):
+    def create(cls,btitle,bpub_date):
         b=BookInfo
         b.btitle=btitle
         b.bpub_date=bpub_date
