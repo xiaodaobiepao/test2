@@ -12,6 +12,16 @@ class BookInfo(models.Model):
     class Meta:
         db_table='bookinfo'
 
+    @classmethod
+    def create(cls,btitle,bpub,bpub_date):
+        b=BookInfo
+        b.btitle=btitle
+        b.bpub_date=bpub_date
+        b.bread=0
+        b.bcommet=0
+        b.isDelete=False
+        return b
+
 class HeroInfo(models.Model):
     hname=models.CharField(max_length=10)
     hgender=models.BooleanField(default=True)
