@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+#ceshi
 
 class BookInfo(models.Model):
     btitle = models.CharField(max_length=20)
