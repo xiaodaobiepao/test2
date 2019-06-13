@@ -14,7 +14,7 @@ class BookInfo(models.Model):
 
     @classmethod
     def create(cls,btitle,bpub_date):
-        b=BookInfo
+        b=BookInfo()
         b.btitle=btitle
         b.bpub_date=bpub_date
         b.bread=0
