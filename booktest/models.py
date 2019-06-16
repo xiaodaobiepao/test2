@@ -3,6 +3,18 @@ from django.db import models
 # Create your models here.
 #ceshi
 
+class BookInfoManager(models.Manager):
+    def get_queryset(self):
+        return super(BookInfoManager,self).get_queryset().filter(isDelete=False)
+    def create(self,btitle,bpub_date):
+        b=BookInfo()
+        b.btitle=btitle
+        b.bpub_date=bpub_date
+        b.bread=0
+        b.bcommet=0
+        b.isDelete=False
+        return b
+
 class BookInfo(models.Model):
     btitle = models.CharField(max_length=20)
     bpub_date=models.DateTimeField()
@@ -11,7 +23,7 @@ class BookInfo(models.Model):
     isDelete=models.BooleanField(default=False)
     class Meta:
         db_table='bookinfo'
-
+    books2=BookInfoManager()
     @classmethod
     def create(cls,btitle,bpub_date):
         b=BookInfo()
