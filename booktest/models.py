@@ -23,6 +23,7 @@ class BookInfo(models.Model):
     isDelete=models.BooleanField(default=False)
     class Meta:
         db_table='bookinfo'
+    books1=models.Manager()
     books2=BookInfoManager()
     @classmethod
     def create(cls,btitle,bpub_date):
