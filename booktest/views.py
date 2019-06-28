@@ -26,6 +26,7 @@ def getTest2(request):
 # jiehsouyijianduozho,bunegyouzhongwen
 
 def getTest3(request):
-    a = request.GET['a']
+    a = request.GET.getlist('a')
     b = request.GET['b']
-    return render(request, 'booktest/getTest3.html')
+    context={'a':a}
+    return render(request, 'booktest/getTest3.html',context)
