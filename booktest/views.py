@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -46,3 +46,9 @@ def cookieTest(request):
     response=HttpResponse()
     response.set_cookie('t1','abbc')
     return response
+
+def redTest1(request):
+    return HttpResponseRedirect('booktest/redTest2')
+
+def redTest2(request):
+    return HttpResponse('zheshizhuanxiangdeyemian')
