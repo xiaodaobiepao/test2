@@ -30,3 +30,9 @@ def getTest3(request):
     b = request.GET['b']
     context={'a':a}
     return render(request, 'booktest/getTest3.html',context)
+
+def postTest1(request):
+    return render(request,'booktest/postTest1.html')
+
+def postTest2(request):
+    return render(request,'booktest/postTest2.html')
