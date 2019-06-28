@@ -23,7 +23,7 @@ def getTest2(request):
     b=request.GET['b']
     context={'a':a,'b':b}
     return render(request, 'booktest/getTest2.html', context)
-# 接收一键多值
+# jiehsouyijianduozho,bunegyouzhongwen
 
 def getTest3(request):
     a = request.GET['a']
