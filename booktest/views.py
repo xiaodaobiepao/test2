@@ -52,3 +52,17 @@ def redTest1(request):
 
 def redTest2(request):
     return HttpResponse('zheshizhuanxiangdeyemian')
+
+def session(request):
+    uname=request.session.get('myname')
+    context={'uname':uname}
+    return render(request,'booktest/session.html',context)
+
+def session2(request):
+    return render(request,'booktest/session2.html')
+
+def session_handle(request):
+    uname=request.POST['uname']
+    upwd=request.POST['upwd']
+    request.session['myname']=uname
+    return HttpResponseRedirect('booktest/session')
