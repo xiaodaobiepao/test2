@@ -5,6 +5,12 @@
     <title>postTest2</title>
 </head>
 <body>
-
+<p>用户名：{{ uname }}</p>
+<p>密码：{{upwd}}</p>
+<p>姓名：{{ugender}}</p>
+爱好：{{uhobby}}
+{% for item in uhobby %}
+<span>item</span>
+{% endfor %}
 </body>
 </html>

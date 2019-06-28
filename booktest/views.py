@@ -35,4 +35,9 @@ def postTest1(request):
     return render(request,'booktest/postTest1.html')
 
 def postTest2(request):
-    return render(request,'booktest/postTest2.html')
+    uname=request.POST['uname']
+    upwd=request.POST['upwd']
+    ugender=request.POST.get('ugender')
+    uhobby=request.POST.getlist('uhobby')
+    context={'uname':uname,'upwd':upwd,'ugender':ugender,'uhobby':uhobby}
+    return render(request,'booktest/postTest2.html',context)
