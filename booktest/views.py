@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
@@ -63,6 +63,5 @@ def session2(request):
 
 def session_handle(request):
     uname=request.POST['uname']
-    upwd=request.POST['upwd']
     request.session['myname']=uname
-    return HttpResponseRedirect('booktest/session')
+    return redirect('/booktest/session')
