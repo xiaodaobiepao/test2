@@ -15,13 +15,16 @@ def show(request, p1, p2, p3):
 # zhanshilianjie
 def getTest1(request):
     return render(request, 'booktest/getTest1.html')
-# 接收一键一值
+
+# jieshouyijianyizhi
+
 def getTest2(request):
     a=request.GET['a']
     b=request.GET['b']
     context={'a':a,'b':b}
     return render(request, 'booktest/getTest2.html', context)
 # 接收一键多值
+
 def getTest3(request):
     a = request.GET['a']
     b = request.GET['b']
