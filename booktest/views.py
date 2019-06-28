@@ -41,3 +41,8 @@ def postTest2(request):
     uhobby=request.POST.getlist('uhobby')
     context={'uname':uname,'upwd':upwd,'ugender':ugender,'uhobby':uhobby}
     return render(request,'booktest/postTest2.html',context)
+
+def cookieTest(request):
+    response=HttpResponse()
+    response.set_cookie('t1','abbc')
+    return response
