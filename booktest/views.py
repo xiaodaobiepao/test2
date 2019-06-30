@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
+from models import *
 
 # Create your views here.
 def index(request):
@@ -8,7 +9,9 @@ def index(request):
     # return HttpResponse(request)
 
 def detail(request, r1):
-    return  HttpResponse(r1)
+    hero=HeroInfo.objects.get(pk=1)
+    context={'hero':hero}
+    return  render(request, 'booktest/detail.html',context)
 
 def show(request, p1, p2, p3):
     return HttpResponse('year:%s,month:%s,day:%s'%(p1,p2,p3))
